@@ -53,30 +53,33 @@ export const WalkersTourCategories: React.FC<WalkersTourCategoriesProps> = ({
     },
   ];
 
+  const touchTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
   const handleScroll = (direction: 'left' | 'right') => {
     if (scrollRef.current) {
-      const scrollAmount = direction === 'left' ? -340 : 340;
+      const scrollAmount = direction === 'left' ? -310 : 310;
       scrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     }
   };
 
-  // Safe Auto Slider functionality (only on desktop hover devices, never interrupt active touch)
+  // Fast & responsive auto slider for all screen sizes
   useEffect(() => {
-    const isTouchDevice = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
-    if (isTouchDevice) return;
-
     const interval = setInterval(() => {
       if (scrollRef.current && !isHoveredRef.current && !isInteractingRef.current) {
         const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
-        if (scrollLeft + clientWidth >= scrollWidth - 10) {
+        const scrollStep = clientWidth < 640 ? 280 : 310;
+        if (scrollLeft + clientWidth >= scrollWidth - 25) {
           scrollRef.current.scrollTo({ left: 0, behavior: 'smooth' });
         } else {
-          scrollRef.current.scrollBy({ left: 310, behavior: 'smooth' });
+          scrollRef.current.scrollBy({ left: scrollStep, behavior: 'smooth' });
         }
       }
-    }, 3800);
+    }, 2400);
 
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+      if (touchTimeoutRef.current) clearTimeout(touchTimeoutRef.current);
+    };
   }, []);
 
   return (
@@ -120,9 +123,19 @@ export const WalkersTourCategories: React.FC<WalkersTourCategoriesProps> = ({
           ref={scrollRef}
           onMouseEnter={() => { isHoveredRef.current = true; }}
           onMouseLeave={() => { isHoveredRef.current = false; }}
-          onTouchStart={() => { isInteractingRef.current = true; }}
-          onTouchEnd={() => { setTimeout(() => { isInteractingRef.current = false; }, 1200); }}
-          onTouchCancel={() => { isInteractingRef.current = false; }}
+          onTouchStart={() => {
+            isInteractingRef.current = true;
+            if (touchTimeoutRef.current) clearTimeout(touchTimeoutRef.current);
+          }}
+          onTouchEnd={() => {
+            if (touchTimeoutRef.current) clearTimeout(touchTimeoutRef.current);
+            touchTimeoutRef.current = setTimeout(() => {
+              isInteractingRef.current = false;
+            }, 1200);
+          }}
+          onTouchCancel={() => {
+            isInteractingRef.current = false;
+          }}
           data-reveal-stagger
           className="flex space-x-5 overflow-x-auto no-scrollbar pb-6 pt-2 snap-x snap-mandatory touch-scroll-x"
         >
