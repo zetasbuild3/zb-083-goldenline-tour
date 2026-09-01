@@ -89,33 +89,40 @@ export default function DestinationsPage() {
       <WalkersHeader onOpenSearch={() => setIsSearchOpen(true)} />
 
       {/* Hero Section */}
-      <section className="relative min-h-[75vh] lg:min-h-[85vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[75vh] lg:min-h-[85vh] flex items-center justify-center text-white overflow-hidden text-center pt-28 pb-20">
         {/* Background Image Carousel with Auto Ken-Burns Effect */}
         <div className="absolute inset-0 z-0">
           <BackgroundAutoSlider
             slides={destinationSlides}
-            overlayGradient="bg-gradient-to-t from-[#181513] via-transparent to-black/60"
+            overlayGradient="bg-gradient-to-b from-black/80 via-black/45 to-[#181513]"
             intervalMs={5500}
           />
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 text-center text-white pt-24 pb-20 flex flex-col items-center">
-          <div data-reveal="fade-down" className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[#cba258] text-xs uppercase tracking-widest font-semibold mb-6">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>Sri Lanka Destination Directory</span>
-          </div>
+        <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 sm:mt-0">
+          <span
+            data-reveal="fade-down"
+            data-reveal-delay="100"
+            className="font-caveat text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#cba258] mb-[-5px] sm:mb-[-10px] md:mb-[-15px] z-10 -rotate-2 inline-block"
+            style={{ fontFamily: 'var(--font-caveat), cursive' }}
+          >
+            Explore the Wonder of
+          </span>
 
-          <h1 data-reveal="zoom-out" data-reveal-duration="900" className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6 uppercase text-white drop-shadow-lg leading-tight">
-            Enchanting<br />
-            <span className="text-[#cba258] italic font-normal font-serif">Destinations</span>
+          <h1 
+            data-reveal="fade-up"
+            data-reveal-delay="200"
+            className="font-serif text-3xl sm:text-5xl md:text-7xl lg:text-[90px] font-bold tracking-wider sm:tracking-widest text-[#f8fbfa] uppercase leading-tight sm:leading-none drop-shadow-2xl mb-6 lg:mb-8 mt-2 max-w-full"
+          >
+            DESTINATIONS
           </h1>
 
-          <p data-reveal="fade-up" data-reveal-delay="250" className="text-base sm:text-xl text-white/90 max-w-2xl font-light leading-relaxed mb-10 drop-shadow">
+          <p data-reveal="fade-up" data-reveal-delay="300" className="text-sm sm:text-base md:text-lg text-gray-200 font-light max-w-2xl mx-auto leading-relaxed mb-8 drop-shadow-md">
             From the misty high tea trails of Nuwara Eliya to golden palm-fringed southern coastlines and ancient UNESCO rock citadels.
           </p>
 
-          <div data-reveal="zoom-in" data-reveal-delay="450" className="flex items-center gap-4">
+          <div data-reveal="zoom-in" data-reveal-delay="450" className="flex items-center justify-center gap-4">
             <button
               onClick={scrollToGrid}
               className="next-btn next-btn--white group cursor-pointer hover:scale-105 transition-transform"
@@ -126,12 +133,6 @@ export default function DestinationsPage() {
               <span className="text-xs uppercase tracking-widest font-bold">Discover Places</span>
             </button>
           </div>
-        </div>
-
-        {/* Subtle Scroll Indicator */}
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center text-white/60 pointer-events-none">
-          <span className="text-[10px] uppercase tracking-widest mb-1">Scroll</span>
-          <div className="w-0.5 h-6 bg-[#F5F2E6]/40 animate-pulse" />
         </div>
       </section>
 
@@ -165,7 +166,7 @@ export default function DestinationsPage() {
             ref={regionTabsRef}
             data-reveal="fade-up"
             data-reveal-delay="100"
-            className="w-full -mx-4 sm:mx-0 px-4 sm:px-0 overflow-x-auto pb-4 mb-12 no-scrollbar py-2 scroll-smooth"
+            className="w-full -mx-4 sm:mx-0 px-4 sm:px-0 overflow-x-auto pb-4 mb-12 no-scrollbar py-2 touch-scroll-x"
           >
             <div className="flex items-center justify-start md:justify-center gap-2.5 w-max md:w-auto md:flex-wrap min-w-full px-2 py-1 pr-10 md:pr-2">
               {regions.map((region) => {

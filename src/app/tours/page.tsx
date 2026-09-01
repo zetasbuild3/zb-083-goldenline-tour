@@ -102,31 +102,18 @@ export default function ToursOverviewPage() {
             TOUR PACKAGES
           </h1>
 
-          <div data-reveal="zoom-in" data-reveal-delay="450" className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full max-w-[280px] sm:max-w-none mx-auto">
+          <div data-reveal="zoom-in" data-reveal-delay="450" className="flex items-center justify-center">
             <button
               onClick={() => {
                 const el = document.getElementById('packages-list');
                 el?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="next-btn next-btn--white group cursor-pointer hover:scale-105 transition-transform w-full sm:w-auto justify-start sm:justify-center"
+              className="next-btn next-btn--white group cursor-pointer hover:scale-105 transition-transform"
             >
-              <div className="next-btn-circle group-hover:scale-110 group-hover:bg-[#cba258] transition-all duration-300 shrink-0">
-                <ArrowRight className="w-4 h-4 text-[var(--color-primary)]" />
+              <div className="next-btn-circle group-hover:scale-110 group-hover:bg-[#cba258] transition-all duration-300">
+                <ArrowRight className="w-4 h-4 text-[var(--color-primary)] group-hover:translate-x-0.5 transition-transform" />
               </div>
-              <span className="text-xs uppercase tracking-widest font-bold text-left">Discover Itineraries</span>
-            </button>
-
-            <button
-              onClick={() => {
-                const el = document.getElementById('custom-tour-form');
-                el?.scrollIntoView({ behavior: 'smooth' });
-              }}
-              className="next-btn next-btn--white group cursor-pointer hover:scale-105 transition-transform w-full sm:w-auto justify-start sm:justify-center"
-            >
-              <div className="next-btn-circle group-hover:scale-110 group-hover:bg-[#cba258] transition-all duration-300 shrink-0">
-                <Sparkles className="w-4 h-4 text-[var(--color-primary)]" />
-              </div>
-              <span className="text-xs uppercase tracking-widest font-bold text-left">Plan Custom Trip</span>
+              <span className="text-xs uppercase tracking-widest font-bold">Discover Itineraries</span>
             </button>
           </div>
         </div>
@@ -165,7 +152,7 @@ export default function ToursOverviewPage() {
             ref={categoryTabsRef}
             data-reveal="fade-up"
             data-reveal-delay="100"
-            className="w-full -mx-4 sm:mx-0 px-4 sm:px-0 overflow-x-auto pb-4 mb-12 no-scrollbar py-2 scroll-smooth"
+            className="w-full -mx-4 sm:mx-0 px-4 sm:px-0 overflow-x-auto pb-4 mb-12 no-scrollbar py-2 touch-scroll-x"
           >
             <div className="flex items-center justify-start md:justify-center gap-2.5 w-max md:w-auto md:flex-wrap min-w-full px-2 py-1 pr-10 md:pr-2">
               {categories.map((cat) => {

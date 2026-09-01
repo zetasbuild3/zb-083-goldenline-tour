@@ -75,7 +75,7 @@ export const WalkersTourPackages: React.FC<WalkersTourPackagesProps> = () => {
         <div
           ref={packagesTabsRef}
           data-reveal="fade-down"
-          className="w-full -mx-4 sm:mx-0 px-4 sm:px-0 overflow-x-auto no-scrollbar pb-3 sm:pb-0 mb-12 py-2 scroll-smooth"
+          className="w-full -mx-4 sm:mx-0 px-4 sm:px-0 overflow-x-auto no-scrollbar pb-3 sm:pb-0 mb-12 py-2 touch-scroll-x"
         >
           <div className="flex items-center sm:flex-wrap gap-2 sm:gap-3 sm:justify-center w-max sm:w-auto min-w-full px-2 py-1 pr-10 sm:pr-2">
             {categories.map((cat) => (

@@ -40,8 +40,8 @@ export const ScrollRevealProvider: React.FC<{ children: React.ReactNode }> = ({ 
     };
 
     const observer = new IntersectionObserver(observerCallback, {
-      threshold: [0, 0.05],
-      rootMargin: '0px 0px -20px 0px',
+      threshold: [0, 0.02],
+      rootMargin: '120px 0px 80px 0px',
     });
 
     const registerElements = () => {
@@ -49,8 +49,10 @@ export const ScrollRevealProvider: React.FC<{ children: React.ReactNode }> = ({ 
         '[data-reveal], [data-reveal-stagger], section:not(.no-reveal), footer:not(.no-reveal), .reveal-section, .hover-box'
       );
 
+      const vh = window.innerHeight || 800;
+
       targets.forEach((target) => {
-        // If it is a stagger container, ensure all current children have reveal index and are revealed if parent is
+        // If it is a stagger container, ensure all current children have reveal index
         if (target.hasAttribute('data-reveal-stagger') || target.classList.contains('reveal-stagger')) {
           const children = Array.from(target.children) as HTMLElement[];
           children.forEach((child, index) => {
@@ -68,7 +70,7 @@ export const ScrollRevealProvider: React.FC<{ children: React.ReactNode }> = ({ 
         }
 
         const rect = target.getBoundingClientRect();
-        if (rect.top < window.innerHeight && rect.bottom > 0) {
+        if (rect.top < vh + 50 && rect.bottom > -50) {
           target.classList.add('is-revealed');
           if (target.hasAttribute('data-reveal-stagger') || target.classList.contains('reveal-stagger')) {
             const children = Array.from(target.children) as HTMLElement[];
@@ -84,11 +86,15 @@ export const ScrollRevealProvider: React.FC<{ children: React.ReactNode }> = ({ 
     };
 
     // Initial registration
-    const timer = setTimeout(registerElements, 50);
+    const timer = setTimeout(registerElements, 40);
 
-    // Watch for dynamic DOM changes (filtering, tabs, accordion)
+    // Watch for dynamic DOM changes (filtering, tabs, accordion) with debounce
+    let debounceTimer: ReturnType<typeof setTimeout> | null = null;
     const mutationObserver = new MutationObserver(() => {
-      registerElements();
+      if (debounceTimer) clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(() => {
+        registerElements();
+      }, 150);
     });
 
     mutationObserver.observe(document.body, {
@@ -98,6 +104,7 @@ export const ScrollRevealProvider: React.FC<{ children: React.ReactNode }> = ({ 
 
     return () => {
       clearTimeout(timer);
+      if (debounceTimer) clearTimeout(debounceTimer);
       observer.disconnect();
       mutationObserver.disconnect();
     };

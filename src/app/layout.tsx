@@ -1,8 +1,15 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Outfit, Playfair_Display, Caveat } from 'next/font/google';
 import './globals.css';
 import { CurrencyProvider } from '@/context/CurrencyContext';
 import { ScrollRevealProvider } from '@/components/ScrollRevealProvider';
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: '#181513',
+};
 
 const outfit = Outfit({
   subsets: ['latin'],
@@ -59,8 +66,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" data-scroll-behavior="smooth" className={`${outfit.variable} ${playfair.variable} ${caveat.variable} scroll-smooth`}>
-      <body className="font-sans antialiased text-[#13261f] bg-[#fbfdfc] selection:bg-[#D4AF37] selection:text-white">
+    <html lang="en" className={`${outfit.variable} ${playfair.variable} ${caveat.variable}`}>
+      <body className="font-sans antialiased text-[#13261f] bg-[#FAF7EE] selection:bg-[#CBA258] selection:text-white">
         <CurrencyProvider>
           <ScrollRevealProvider>
             {children}

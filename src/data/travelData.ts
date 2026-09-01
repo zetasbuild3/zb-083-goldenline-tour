@@ -23,22 +23,22 @@ export const DESTINATIONS: Destination[] = [
       {
         name: 'Coconut Tree Hill',
         desc: 'A picturesque dome-shaped palm promontory overlooking the azure Indian Ocean, celebrated as Sri Lanka’s most photographed sunset viewpoint.',
-        image: '/images/locations/mirissa_coconut_tree_hill.webp',
+        image: '/images/Destinations/CoconutTree Hill.webp',
       },
       {
         name: 'Deep-Sea Whale Watching Safari',
         desc: 'Morning catamaran cruise into international shipping lanes to witness giant blue whales, sperm whales, and pods of playful spinner dolphins.',
-        image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80',
+        image: '/images/Destinations/Deep-SeaWhaleWatchingSafari.webp',
       },
       {
         name: 'Secret Beach Mirissa',
         desc: 'A hidden secluded cove surrounded by lush coconut palms and tidal rock pools, perfect for tranquil swimming away from crowds.',
-        image: '/images/locations/mirissa.webp',
+        image: '/images/Destinations/SecretBeachMirissa.webp',
       },
       {
         name: 'Parrot Rock',
         desc: 'A red rocky outcrop standing off the main beach offering panoramic vantage views of the entire Mirissa coastline and surfers.',
-        image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
+        image: '/images/Destinations/ParrotRock.webp',
       },
     ],
     thingsToDo: [
@@ -70,8 +70,10 @@ export const DESTINATIONS: Destination[] = [
     ],
     gallery: [
       '/images/locations/mirissa.webp',
-      '/images/locations/mirissa_coconut_tree_hill.webp',
-      '/images/locations/weligama.webp',
+      '/images/Destinations/CoconutTree Hill.webp',
+      '/images/Destinations/Deep-SeaWhaleWatchingSafari.webp',
+      '/images/Destinations/SecretBeachMirissa.webp',
+      '/images/Destinations/ParrotRock.webp',
     ],
     nearbyTours: ['tropical-highlights-tour', 'wild-surf-tour', 'romantic-climes-tour', 'island-passion-tour'],
   },
@@ -102,17 +104,17 @@ export const DESTINATIONS: Destination[] = [
       {
         name: "Little Adam's Peak (Punchi Sri Pada)",
         desc: 'An accessible 45-minute scenic mountain trek rewarding hikers with breathtaking 360-degree panoramic vistas over Ella Gap and Ravana Falls.',
-        image: '/images/locations/hero-ella.webp',
+        image: '/images/Destinations/LittleAdamsPeak.webp',
       },
       {
         name: 'Ravana Falls & Caves',
         desc: 'A roaring 25-meter multi-tiered cascade tied to the legendary Ramayana epic, surrounded by rugged limestone mountain walls.',
-        image: '/images/locations/ravanafalls.webp',
+        image: '/images/Destinations/RavanaFallsCaves.webp',
       },
       {
         name: 'Ella Rock Summit',
         desc: 'A thrilling high-elevation hike through eucalyptus forests and tea gardens terminating at sheer precipice cliffs overlooking the southern plains.',
-        image: '/images/locations/ella3.webp',
+        image: '/images/Destinations/EllaRock.webp',
       },
     ],
     thingsToDo: [
@@ -144,9 +146,10 @@ export const DESTINATIONS: Destination[] = [
     ],
     gallery: [
       '/images/locations/hero-ella.webp',
+      '/images/Destinations/LittleAdamsPeak.webp',
+      '/images/Destinations/RavanaFallsCaves.webp',
+      '/images/Destinations/EllaRock.webp',
       '/images/locations/ella2.webp',
-      '/images/locations/ella3.webp',
-      '/images/locations/ravanafalls.webp',
     ],
     nearbyTours: ['scenic-escapes-tour', 'scenic-vistas-tour', 'thrill-seeker-tour', 'tropical-bliss-tour'],
   },
@@ -177,17 +180,17 @@ export const DESTINATIONS: Destination[] = [
       {
         name: 'Sigiriya Frescoes & Mirror Wall',
         desc: 'World-famous 5th-century heavenly celestial maiden frescoes and the polished porcelain-like brick Mirror Wall bearing ancient poetic graffiti.',
-        image: '/images/locations/sigiriya.webp',
+        image: '/images/Destinations/SigiriyaFrescoesMirrorWall.webp',
       },
       {
         name: 'Royal Water & Terrace Gardens',
         desc: 'Symmetrical ancient hydraulic water gardens with functioning fountains, underground conduits, moats, and stone boulder pavilions.',
-        image: '/images/locations/cultural.webp',
+        image: '/images/Destinations/RoyalWaterTerraceGardens.webp',
       },
       {
         name: 'Pidurangala Sunset Peak',
         desc: 'An adjacent monastic rock peak offering the most iconic panoramic postcard vista directly facing the Sigiriya citadel.',
-        image: '/images/locations/sigiriya.webp',
+        image: '/images/Destinations/Pidurangala.webp',
       },
     ],
     thingsToDo: [
@@ -220,7 +223,9 @@ export const DESTINATIONS: Destination[] = [
     gallery: [
       '/images/locations/sigiriya.webp',
       '/images/locations/sigiriya_lion_paws.webp',
-      '/images/locations/dambulla.webp',
+      '/images/Destinations/Pidurangala.webp',
+      '/images/Destinations/SigiriyaFrescoesMirrorWall.webp',
+      '/images/Destinations/RoyalWaterTerraceGardens.webp',
     ],
     nearbyTours: ['ancient-legacy-tour', 'tropical-highlights-tour', 'exotic-isle-tour', 'resplendent-isle-tour'],
   },
@@ -234,7 +239,7 @@ export const DESTINATIONS: Destination[] = [
     rating: 4.7,
     reviewsCount: 310,
     image: '/images/locations/kandy.webp',
-    heroImage: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=1200&q=80',
+    heroImage: '/images/Destinations/KandyLake.webp',
     shortDesc: 'Sacred Temple of the Tooth, culture & beautiful lake.',
     description: 'The sacred royal capital housing the Temple of the Sacred Tooth Relic (Dalada Maligawa), surrounded by tranquil Kandy Lake, mist-veiled mountain ranges, and rich artisan heritage.',
     tag: 'Cultural Capital',
@@ -251,17 +256,17 @@ export const DESTINATIONS: Destination[] = [
       {
         name: 'Royal Botanical Gardens, Peradeniya',
         desc: 'Near 200-year-old gardens spanning 147 acres, home to more than 4,000 plant species including giant Java fig trees, palm avenues, and orchids.',
-        image: 'https://images.unsplash.com/photo-1588598198321-9735fd52455f?auto=format&fit=crop&w=800&q=80',
+        image: '/images/Destinations/RoyalBotanicalGardens.webp',
       },
       {
         name: 'Kandy Lake (Kiri Muhuda)',
         desc: 'A tranquil artificial lake built in 1807 by the last King of Kandy, Sri Wickrama Rajasinghe, perfect for peaceful sunset strolls.',
-        image: '/images/locations/kandy.webp',
+        image: '/images/Destinations/KandyLake.webp',
       },
       {
         name: 'Bahirawakanda Vihara Buddha Statue',
         desc: 'An 88-foot towering white Buddha statue perched atop Bahirawakanda mountain providing panoramic city views.',
-        image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=800&q=80',
+        image: '/images/Destinations/BahirawakandaViharaBuddhaStatue.webp',
       },
     ],
     thingsToDo: [
@@ -293,7 +298,9 @@ export const DESTINATIONS: Destination[] = [
     ],
     gallery: [
       '/images/locations/kandy.webp',
-      'https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=800&q=80',
+      '/images/Destinations/KandyLake.webp',
+      '/images/Destinations/RoyalBotanicalGardens.webp',
+      '/images/Destinations/BahirawakandaViharaBuddhaStatue.webp',
     ],
     nearbyTours: ['tropical-highlights-tour', 'ancient-legacy-tour', 'scenic-escapes-tour', 'romantic-climes-tour'],
   },
@@ -319,22 +326,22 @@ export const DESTINATIONS: Destination[] = [
       {
         name: 'Pedro Tea Estate & Factory',
         desc: 'A working colonial tea plantation where you can walk through emerald tea terraces, watch orthodox production, and taste pure Ceylon Orange Pekoe.',
-        image: '/images/locations/nuwaraeliya.webp',
+        image: '/images/Destinations/PedroTeaEstateFactory.webp',
       },
       {
         name: 'Lake Gregory Water Sports',
         desc: 'A scenic recreational mountain lake offering boat rides, jet skis, swan pedal boats, horse riding, and lakeside promenade dining.',
-        image: '/images/locations/nuwaraeliya2.webp',
+        image: '/images/Destinations/LakeGregory.webp',
       },
       {
         name: "Horton Plains & World's End",
         desc: 'A UNESCO cloud forest plateau featuring a sudden 880-meter vertical abyss overlooking the southern plains and misty Baker’s Falls.',
-        image: '/images/locations/hillcountry.webp',
+        image: '/images/Destinations/HortonPlains.webp',
       },
       {
         name: 'Ramboda Twin Waterfalls',
         desc: 'A thunderous 109-meter cascade tumbling through emerald pine valleys alongside the mountain pass.',
-        image: '/images/locations/ravanafalls.webp',
+        image: '/images/Destinations/RambodaTwinWaterfalls.webp',
       },
     ],
     thingsToDo: [
@@ -366,8 +373,10 @@ export const DESTINATIONS: Destination[] = [
     ],
     gallery: [
       '/images/locations/nuwaraeliya.webp',
-      '/images/locations/nuwaraeliya2.webp',
-      '/images/locations/hillcountry.webp',
+      '/images/Destinations/LakeGregory.webp',
+      '/images/Destinations/PedroTeaEstateFactory.webp',
+      '/images/Destinations/HortonPlains.webp',
+      '/images/Destinations/RambodaTwinWaterfalls.webp',
     ],
     nearbyTours: ['scenic-escapes-tour', 'scenic-vistas-tour', 'tropical-bliss-tour', 'the-luxury-escape-sri-lanka'],
   },
@@ -393,22 +402,22 @@ export const DESTINATIONS: Destination[] = [
       {
         name: 'Block 1 Game Safari Drive',
         desc: 'The world-famous zone boasting the highest concentration of Panthera pardus kotiya (Sri Lankan leopard) alongside sloth bears.',
-        image: '/images/locations/yala.webp',
+        image: '/images/Destinations/Block1GameSafariDrive.webp',
       },
       {
         name: 'Patanangala Coastal Beach Rock',
         desc: 'A rugged Indian Ocean rock formation on the park boundary where safari jeeps pause for ocean panoramas.',
-        image: '/images/locations/wildlife.webp',
+        image: '/images/Destinations/PatanangalaCoastalBeachRock.webp',
       },
       {
         name: 'Sithulpawwa Rock Temple',
         desc: 'A 2,200-year-old ancient monastic complex hidden deep in the wilderness where thousands of monks once meditated.',
-        image: '/images/locations/cultural.webp',
+        image: '/images/Destinations/SithulpawwaRockTemple.webp',
       },
       {
         name: 'Kumana Bird Sanctuary Boundary',
         desc: 'Vast coastal lagoons teeming with painted storks, pelicans, spoonbills, and migratory sea eagles.',
-        image: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=800&q=80',
+        image: '/images/Destinations/KumanaNationalParkBirdSanctuary.webp',
       },
     ],
     thingsToDo: [
@@ -440,7 +449,10 @@ export const DESTINATIONS: Destination[] = [
     ],
     gallery: [
       '/images/locations/yala.webp',
-      '/images/locations/wildlife.webp',
+      '/images/Destinations/Block1GameSafariDrive.webp',
+      '/images/Destinations/PatanangalaCoastalBeachRock.webp',
+      '/images/Destinations/SithulpawwaRockTemple.webp',
+      '/images/Destinations/KumanaNationalParkBirdSanctuary.webp',
     ],
     nearbyTours: ['wild-adventures-tour', 'tropical-highlights-tour', 'island-passion-tour', 'expedition-tropical-luxury'],
   },
@@ -466,22 +478,22 @@ export const DESTINATIONS: Destination[] = [
       {
         name: 'The Iconic Galle Lighthouse',
         desc: 'An 1848 whitewashed lighthouse towering against palm trees on the Point Utrecht Bastion overlooking the Indian Ocean.',
-        image: '/images/locations/gallefort.webp',
+        image: '/images/Destinations/TheIconicGalleLighthouse.webp',
       },
       {
         name: 'Dutch Fort Ramparts & Bastions',
         desc: 'Massive coral and granite rampart walls built by Portuguese and Dutch colonizers that survived the 2004 tsunami.',
-        image: '/images/locations/gallefort.webp',
+        image: '/images/Destinations/DutchFortRamparts.webp',
       },
       {
         name: 'Pedlar & Church Street Boutiques',
         desc: 'Vibrant cobblestone lanes lined with restored Dutch colonial residences, artisanal jewelry stores, and gelato parlors.',
-        image: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=800&q=80',
+        image: '/images/Destinations/ChurchStreetBoutiques.webp',
       },
       {
         name: 'Dutch Reformed Groote Kerk',
         desc: 'A 1755 historic church featuring gravestones carved with Dutch coats of arms and a honeycomb-patterned timber ceiling.',
-        image: '/images/locations/gallefort.webp',
+        image: '/images/Destinations/DutchReformedGrooteKerk.webp',
       },
     ],
     thingsToDo: [
@@ -513,7 +525,10 @@ export const DESTINATIONS: Destination[] = [
     ],
     gallery: [
       '/images/locations/gallefort.webp',
-      'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=800&q=80',
+      '/images/Destinations/TheIconicGalleLighthouse.webp',
+      '/images/Destinations/DutchFortRamparts.webp',
+      '/images/Destinations/ChurchStreetBoutiques.webp',
+      '/images/Destinations/DutchReformedGrooteKerk.webp',
     ],
     nearbyTours: ['tropical-highlights-tour', 'serendib-summer-tour', 'white-sands-tour', 'expedition-tropical-luxury'],
   },
@@ -538,22 +553,22 @@ export const DESTINATIONS: Destination[] = [
       {
         name: 'Main Point Right-Hand Break',
         desc: 'A world-class right-hand point break offering clean peeling waves running up to 500 meters during the summer season.',
-        image: '/images/locations/arugambay.webp',
+        image: '/images/Destinations/MainPointRight-HandBreak.webp',
       },
       {
         name: 'Elephant Rock Sunset Knob',
         desc: 'A secluded rock knoll overlooking a wild lagoon where wild elephants frequently graze against coastal sunsets.',
-        image: '/images/locations/arugambay 2.webp',
+        image: '/images/Destinations/ElephantRockSunsetKnob.webp',
       },
       {
         name: 'Whiskey Point & Peanut Farm',
         desc: 'Fun, forgiving right-hand point breaks surrounded by boulders and rustic beach cabanas, great for all skill levels.',
-        image: '/images/locations/arugambay.webp',
+        image: '/images/Destinations/WhiskeyPointPeanutFarm.webp',
       },
       {
         name: 'Kumana National Park Bird Sanctuary',
         desc: 'An untouched eastern wilderness renowned for 200+ species of migratory birds, leopards, and massive elephant herds.',
-        image: '/images/locations/wildlife.webp',
+        image: '/images/Destinations/KumanaBirdSanctuaryBoundary.webp',
       },
     ],
     thingsToDo: [
@@ -585,7 +600,10 @@ export const DESTINATIONS: Destination[] = [
     ],
     gallery: [
       '/images/locations/arugambay.webp',
-      '/images/locations/arugambay 2.webp',
+      '/images/Destinations/MainPointRight-HandBreak.webp',
+      '/images/Destinations/ElephantRockSunsetKnob.webp',
+      '/images/Destinations/WhiskeyPointPeanutFarm.webp',
+      '/images/Destinations/KumanaBirdSanctuaryBoundary.webp',
     ],
     nearbyTours: ['wild-surf-tour', 'adventure-isle-tour', 'serendib-summer-tour'],
   },
