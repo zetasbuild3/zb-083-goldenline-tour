@@ -165,7 +165,7 @@ export default function ToursOverviewPage() {
             ref={categoryTabsRef}
             data-reveal="fade-up"
             data-reveal-delay="100"
-            className="w-full -mx-4 sm:mx-0 px-4 sm:px-0 overflow-x-auto pb-4 mb-12 no-scrollbar py-2 scroll-smooth"
+            className="w-full -mx-4 sm:mx-0 px-4 sm:px-0 overflow-x-auto pb-4 mb-12 no-scrollbar py-2 touch-scroll-x"
           >
             <div className="flex items-center justify-start md:justify-center gap-2.5 w-max md:w-auto md:flex-wrap min-w-full px-2 py-1 pr-10 md:pr-2">
               {categories.map((cat) => {

@@ -14,18 +14,23 @@ interface WalkersDestinationsProps {
 export const WalkersDestinations: React.FC<WalkersDestinationsProps> = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const isHoveredRef = useRef<boolean>(false);
+  const isInteractingRef = useRef<boolean>(false);
 
   const handleScroll = (direction: 'left' | 'right') => {
     if (scrollRef.current) {
-      const scrollAmount = direction === 'left' ? -380 : 380;
+      const scrollAmount = direction === 'left' ? -340 : 340;
       scrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     }
   };
 
-  // Auto Slider functionality (faster interval: 2400ms)
+  // Safe Auto Slider functionality (only on desktop hover devices, never interrupt active touch)
   useEffect(() => {
+    // Disable auto-scroll interval on touch-primary mobile screens to avoid fighting vertical scroll gestures
+    const isTouchDevice = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+    if (isTouchDevice) return;
+
     const interval = setInterval(() => {
-      if (scrollRef.current && !isHoveredRef.current) {
+      if (scrollRef.current && !isHoveredRef.current && !isInteractingRef.current) {
         const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
         if (scrollLeft + clientWidth >= scrollWidth - 10) {
           scrollRef.current.scrollTo({ left: 0, behavior: 'smooth' });
@@ -33,7 +38,7 @@ export const WalkersDestinations: React.FC<WalkersDestinationsProps> = () => {
           scrollRef.current.scrollBy({ left: 310, behavior: 'smooth' });
         }
       }
-    }, 2400);
+    }, 3800);
 
     return () => clearInterval(interval);
   }, []);
@@ -82,8 +87,11 @@ export const WalkersDestinations: React.FC<WalkersDestinationsProps> = () => {
           ref={scrollRef}
           onMouseEnter={() => { isHoveredRef.current = true; }}
           onMouseLeave={() => { isHoveredRef.current = false; }}
+          onTouchStart={() => { isInteractingRef.current = true; }}
+          onTouchEnd={() => { setTimeout(() => { isInteractingRef.current = false; }, 1200); }}
+          onTouchCancel={() => { isInteractingRef.current = false; }}
           data-reveal-stagger
-          className="flex space-x-5 overflow-x-auto no-scrollbar pb-6 pt-2 snap-x snap-mandatory scroll-smooth"
+          className="flex space-x-5 overflow-x-auto no-scrollbar pb-6 pt-2 snap-x snap-mandatory touch-scroll-x"
         >
           {/* Spacer for alignment */}
           <div className="w-4 sm:w-6 lg:w-8 shrink-0" aria-hidden="true" />
