@@ -30,10 +30,10 @@ const caveat = Caveat({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://goldenlinetour.lk'),
-  title: 'GoldenLine TOUR | Premium Tours & Vehicle Rentals',
+  metadataBase: new URL('https://www.goldenlinetour.com'),
+  title: 'GoldenLine TOUR | Uncover the Magic of Sri Lanka',
   description:
-    'Uncover the magic of Sri Lanka with GoldenLine TOUR. Premium handcrafted tour packages, comfortable vehicle rentals, luxury chauffeur service, and authentic local experiences.',
+    'Premium tours, unforgettable experiences and reliable vehicle rental services in Sri Lanka.',
   keywords: [
     'Sri Lanka Tourism',
     'GoldenLine TOUR',
@@ -43,20 +43,48 @@ export const metadata: Metadata = {
     'Sigiriya',
     'Luxury Van Rental Sri Lanka',
   ],
+  icons: {
+    icon: [
+      { url: '/icon.png', type: 'image/png' },
+      { url: '/favicon.ico' },
+    ],
+    apple: [
+      { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
   openGraph: {
     title: 'GoldenLine TOUR | Uncover the Magic of Sri Lanka',
-    description: 'Premium tours, unforgettable experiences and reliable vehicle rental services in Sri Lanka.',
+    description:
+      'Premium tours, unforgettable experiences and reliable vehicle rental services in Sri Lanka.',
+    url: 'https://www.goldenlinetour.com',
     type: 'website',
     locale: 'en_US',
     siteName: 'GoldenLine TOUR',
     images: [
       {
-        url: '/images/logo.webp',
+        url: '/images/og-image.jpg',
+        secureUrl: 'https://www.goldenlinetour.com/images/og-image.jpg',
         width: 800,
         height: 800,
-        alt: 'GoldenLine TOUR',
+        type: 'image/jpeg',
+        alt: 'GoldenLine TOUR Logo',
+      },
+      {
+        url: '/images/logo.png',
+        secureUrl: 'https://www.goldenlinetour.com/images/logo.png',
+        width: 800,
+        height: 800,
+        type: 'image/png',
+        alt: 'GoldenLine TOUR Logo',
       },
     ],
+  },
+  twitter: {
+    card: 'summary',
+    title: 'GoldenLine TOUR | Uncover the Magic of Sri Lanka',
+    description:
+      'Premium tours, unforgettable experiences and reliable vehicle rental services in Sri Lanka.',
+    images: ['/images/og-image.jpg'],
   },
 };
 
